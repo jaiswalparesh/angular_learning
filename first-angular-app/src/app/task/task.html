@@ -1,0 +1,22 @@
+@if(isTaskAddClick){
+    <app-add-task [userId] = userTaskId  (cancleTask)="onCancleTaskClick()"></app-add-task>
+}
+
+<section id = "taks">
+    <header>
+        <h2>{{ name }}</h2>
+        <menu>
+            <button (click) = "onAddTaskClick()">Add Task</button>
+        </menu>
+    </header>
+
+</section>
+<ul>
+    @for (task of selectedUserTask; track task.id) {
+        
+        <li>
+            <app-user-task [uTask] = "task"></app-user-task>
+        </li>
+    }
+
+</ul>
